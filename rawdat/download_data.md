@@ -43,3 +43,5 @@ do
     fasterq-dump --split-files $sra
 done
 ```
+
+**QIIME 2**
