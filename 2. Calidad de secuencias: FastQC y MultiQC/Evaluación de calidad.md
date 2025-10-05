@@ -49,7 +49,7 @@ cd MultiQC
 ``` bash
 cp -r ../QC/* ./
 ```
-#### Por último, ejecutaremos el análisis MultiQC en nuestro actual directorio 
+#### *3.* Por último, ejecutaremos el análisis MultiQC en nuestro actual directorio 
 
 ``` bash
 multiqc .
