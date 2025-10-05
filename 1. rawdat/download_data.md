@@ -36,9 +36,5 @@ do
     fasterq-dump --split-files $sra
 done
 ```
-
-**QIIME 2**
-Ya que tenemos los archivos fastq, pordemos pasar a qiime 2.
-
-Activa tu ambiente
-
+- Estos archivos nos ayudarán para conocer la calidad de dichas secuencias en el siguiente paso (FastQC y MultiQC) y demmás análisis con QIIME2.
+  
