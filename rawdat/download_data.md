@@ -45,3 +45,7 @@ done
 ```
 
 **QIIME 2**
+Ya que tenemos los archivos fastq, pordemos pasar a qiime 2.
+
+Activa tu ambiente
+
