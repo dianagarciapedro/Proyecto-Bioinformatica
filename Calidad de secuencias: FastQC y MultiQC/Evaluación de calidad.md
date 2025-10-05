@@ -55,3 +55,4 @@ cp -r ../QC/* ./
 multiqc .
 ```
 
+- De igual forma que los archivos resultantes de la herramienta FastQC, los archivos resultantes de MultiQC con salida html podrán ser visualizados a través de un navegador.
