@@ -32,13 +32,5 @@ do
     fasterq-dump --split-files $sra
 done
 
-**QIIME 2**
-Aquí se prepararán, importarán y procesarán las secuencias en QIIME2, utilizando DADA2.
-```bash
-source activate qiime2-amplicon-2023.9
-qiime tools import \
-  --type 'SampleData[PairedEndSequencesWithQuality]' \
-  --input-path manifest.tsv \
-  --output-path demux.qza \
-  --input-format PairedEndFastqManifestPhred33V2
+
 
