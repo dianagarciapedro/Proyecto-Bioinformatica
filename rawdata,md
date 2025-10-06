@@ -31,3 +31,6 @@ for sra in SRR7724461 SRR7724463 SRR7724464 SRR7724465 SRR7724466 SRR7724468
 do
     fasterq-dump --split-files $sra
 done
+
+**QIIME 2**
+Aquí se prepararán, importarán y procesarán las secuencias en QIIME2, utilizando DADA2.
