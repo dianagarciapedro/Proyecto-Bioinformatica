@@ -32,5 +32,56 @@ do
     fasterq-dump --split-files $sra
 done
 
+**QIIME2**
+Se prepararán, importarán y procesarán secuencias
 
+Crear un archivo manifest.tsv con los archivos fastq 
 
+```bash
+echo -e "sample-id\tforward-absolute-filepath\treverse-absolute-filepath" > manifest.tsv
+
+for id in SRR7724461 SRR7724463 SRR7724464 SRR7724465 SRR7724466 SRR7724468; do
+echo -e "$id\t$(pwd)/${id}_1.fastq.gz\t$(pwd)/${id}_2.fastq.gz" >> manifest.tsv
+done
+```
+
+Activar ambiente que QIIME2
+```bash
+source activate qiime2-amplicon-2023.9
+```
+
+Importar secuencias a QIIME2
+```bash
+qiime tools import
+--type 'SampleData[PairedEndSequencesWithQuality]'
+--input-path manifest.tsv
+--output-path demux.qza
+--input-format PairedEndFastqManifestPhred33V2
+```
+
+Visualizar la calidad de las lecturas
+```bash
+qiime demux summarize
+--i-data demux.qza
+--o-visualization demux.qzv
+```
+
+**DADA**
+
+Filtrado y correción de errores
+```bash
+qiime dada2 denoise-paired
+--i-demultiplexed-seqs demux.qza
+--p-trunc-len-f 240
+--p-trunc-len-r 190
+--o-table dada2_table.qza
+--o-representative-sequences dada2_rep_set.qza
+--o-denoising-stats dada2_stats.qza
+```
+
+Visualizar estadisticas
+```bash
+qiime metadata tabulate
+--m-input-file dada2_stats.qza
+--o-visualization dada2_stats.qzv
+```
