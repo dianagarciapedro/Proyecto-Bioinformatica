@@ -16,9 +16,6 @@ nano sra_list.txt
 
 ### *3. Dentro del archivo .txt (sra_list.txt) deberas pegar los siguientes nombres:* 
 ``` bash
-SRR7724461 
-SRR7724463 
-SRR7724464 
 SRR7724465 
 SRR7724466 
 SRR7724468
@@ -31,7 +28,7 @@ prefetch --option-file sra_list.txt
 ### *5. Conversion de archivos .sra a .fastq*
 Se utilizó un ciclo for para optimizar la tarea:
 ``` bash
-for sra in SRR7724461 SRR7724463 SRR7724464 SRR7724465 SRR7724466 SRR7724468
+for sra in SRR7724465 SRR7724466 SRR7724468
 do
     fasterq-dump --split-files $sra
 done
