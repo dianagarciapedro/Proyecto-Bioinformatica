@@ -33,5 +33,5 @@ do
     fasterq-dump --split-files $sra
 done
 ```
-- Estos archivos nos ayudarán para conocer la calidad de dichas secuencias en el siguiente paso (FastQC y MultiQC) y demmás análisis con QIIME2.
+- Estos archivos nos ayudarán para conocer la calidad de dichas secuencias en el siguiente paso (FastQC y MultiQC) y demás análisis con QIIME2.
   
